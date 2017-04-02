@@ -165,7 +165,7 @@ Ext.define('Admin.view.systemadmin.RolePanel', {
     					tooltip : '修改角色',
     					// itemId : 'x-fa fa-pencil',
     					disabled: true,
-    					iconCls : 'button-update'
+    					iconCls : 'x-fa fa-edit'
     				}, {						
 						xtype: 'tbseparator',
 						hidden : !Admin.app.checkRight(75, 2)

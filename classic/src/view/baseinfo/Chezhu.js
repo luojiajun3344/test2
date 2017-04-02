@@ -88,6 +88,15 @@ Ext.define('Admin.view.baseinfo.Chezhu',{
 		       			         	{ text: '部门ID', dataIndex: 'deptId',flex:1}
 		       			         ], 
 		       			  dockedItems :[{
+  	        		       			xtype:'toolbar',
+  	        		       			frame:false,
+  	        		       			border:false,
+  	        		       			items:[
+  	        		       			       {text:'添加',tooltip:'添加一个新员工',iconCls:'x-fa fa-plus',itemId:'add',hidden : !Admin.app.checkRight(128, 1)},
+  	        		       			       {text:'修改',tooltip:'修改选中的员工信息',disabled:true,iconCls:'x-fa fa-edit',itemId:'update',hidden : !Admin.app.checkRight(128, 2)},
+  	        		       			       {text:'删除',tooltip:'删除选中员工信息',disabled:true,iconCls:'x-fa fa-minus',itemId:'del',hidden : !Admin.app.checkRight(128, 3)}
+		       				         ]
+		       			  },{
 		       			  xtype : 'pagingtoolbar',
 		       			  dock : 'bottom',
 		       			  store: gridStore,
@@ -98,20 +107,8 @@ Ext.define('Admin.view.baseinfo.Chezhu',{
 		       			  nextText : "下一页",
 		       			  lastText : "最后页",
 		       			  firstText : "第一页",
-		       			  beforePageText : "当前页",
-		       			  items:[ 
-		       			          {
-		       			        	  xtype:'tbspacer',width:20
-  	        		       		},{
-  	        		       			xtype:'toolbar',
-  	        		       			frame:false,
-  	        		       			border:false,
-  	        		       			items:[
-  	        		       			       {text:'添加',tooltip:'添加一个新员工',iconCls:'button-add',itemId:'add',hidden : !Admin.app.checkRight(128, 1)},
-  	        		       			       {text:'修改',tooltip:'修改选中的员工信息',disabled:true,iconCls:'button-update',itemId:'update',hidden : !Admin.app.checkRight(128, 2)},
-  	        		       			       {text:'删除',tooltip:'删除选中员工信息',disabled:true,iconCls:'button-remove',itemId:'del',hidden : !Admin.app.checkRight(128, 3)}
-		       				         ]
-		       			  }]
+		       			  beforePageText : "当前页"
+		       			  
 		       		}]
 		      }],
 		

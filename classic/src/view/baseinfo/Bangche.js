@@ -144,6 +144,16 @@ Ext.define('Admin.view.baseinfo.Bangche',{
     	 	  			width:120
     	 	  		}],
     	 	  		dockedItems :[{
+		            	       xtype: 'toolbar',
+		            	       dock: 'top',
+		            	       items: [
+		            	               {text:'添加',tooltip:'添加一个部门',iconCls:'x-fa fa-plus',itemId:'add',hidden : !Admin.app.checkRight(127, 1)},
+		            	               {text:'修改',tooltip:'修改选中部门',disabled:true,iconCls:'x-fa fa-edit',itemId:'update',hidden : !Admin.app.checkRight(127, 2)},
+		            	               {text:'删除',tooltip:'删除选中部门',disabled:true,iconCls:'x-fa fa-minus',itemId:'del',hidden : !Admin.app.checkRight(127, 3)}
+		            	              
+		            	               
+		            	               ]
+		            	     },{
     	            	xtype : 'pagingtoolbar',
     	            	store : logMgrStore,
     					dock : 'bottom',
@@ -176,121 +186,6 @@ Ext.define('Admin.view.baseinfo.Bangche',{
        	    						            ]  
    					    	   				  }
    					    	   		
-   					       },{
-   					    	   xtype:'tbspacer',
-   					    	   width:20
-   					       },{
-   					    	   xtype:'button',
-   					    	   itemId:'button01',
-   					    	   text:'详情',
-   					    	   iconCls:'button-detail',
-   					    	   handler:function(){
-   					    		   
-   					    		   var win = Ext.ComponentQuery.query("window[itemId=logWin]")[0];
-   					    		   if(!win){
-   					    			   win = Ext.create('Ext.window.Window', {
-	   					    		    title: '详情',
-	   					    		    height: 330,
-   	   					    		    width: 520,
-	   					    		    itemId :"logWin",
-	   					    		    layout: 'fit',
-	   					    		    items: {  
-	   					    		        xtype: 'form',
-	   					    		        border: false,
-	   					    		        layout:{
-	   					    		        	type:"table",
-	   					    		        	columns:2
-	   					    		        },
-	   					    		        items:[{
-	   					    	   	        	xtype : 'combobox',
-	   					    					fieldLabel : '所属系统',
-	   					    					name : 'sysId',
-	   					    					labelAlign:'right',
-	   					    					labelWidth:60,
-		   					 					width:250,
-	   					    					
-	   					    					valueField: 'sysId',
-	   					    		            displayField: 'sysName',
-	   					    		            queryMode: 'local',
-	   					    					editable : false
-	   					    	   	        },{
-	   						    	   		   xtype:'grouptreecombo',
-	   						    	   		   fieldLabel:'所属业户',
-	   						    	   		   labelAlign:'right',
-	   						    	   		   labelWidth:60,
-	   						    	   		   treeData: Admin.app.getGroupTreeRaw(),
-	   						    	   		   valueField: 'id',
-	   						    	   		   displayField: 'text',
-	   						    	   		   queryMode: 'local',
-	   						    	   		   emptyText:'请选择所属业户',
-	   						    	   		   width:250,
-	   						    	   		   //margin:'15 0 0 0',
-	   						    	   		   //colspan:2,
-	   						    	   		   name:'groupId'
-	   					 				},{
-	   					 					  xtype:'textfield',
-	   					 					  fieldLabel:'操作事件',
-	   					 					  allowBlank:true,
-	   					 					  labelWidth:60,
-	   					 					  width:250,
-	   					 					  labelAlign:'right',
-	   					 					  name:'operevent'
-	   					 				  },{
-	   					 					  xtype:'textfield',
-	   					 					  fieldLabel:'用户ID',
-	   					 					  allowBlank:true,
-	   					 					  labelWidth:60,
-	   					 					  width:250,
-	   					 					  labelAlign:'right',
-	   					 					  name:'operid'
-	   					 				  },{
-	         					 					xtype : 'textfield',
-	           					 					fieldLabel:'SIM卡号',
-	           					 					name:'mobile',
-	           					 					itemId:'mobile',
-	           					 					width:250,
-	           					 					labelAlign:'right',
-	           					 					labelWidth : 60	  	
-	           					 				},{
-	   					 					xtype : 'textfield',
-	   					 					fieldLabel:'车牌号',
-	   					 					name:'certid',
-	   					 					itemId:'certId',
-	   					 					width:250,
-	   					 					labelAlign:'right',
-	   					 					labelWidth : 60	 
-	   					 			    },{
-	 					 					xtype : 'textfield',
-	   							    		fieldLabel : '操作时间',
-	   							    		value:new Date(),
-	   							    		allowBlank:false,
-	   							    		name : 'opertime',
-	   							    		labelWidth:60,
-	   							    		labelAlign:'right',
-	   										width : 250
-	   					 				  },{
-	   					 			    	xtype:'textfield',
-	   					 			    	fieldLabel:"登陆IP",
-	   					 			    	name:'operip',
-	   					 			    	width:250,
-	   					 			    	labelAlign:'right',
-						 					labelWidth : 60	 
-	   					 			    },{
-	   					 					  xtype:'htmleditor',
-	   					 					  xtype: 'htmleditor',
-	   					 					  name:'opercont',
-	   					 					  enableColors: false,
-	   					 					  enableAlignments: false,
-	   					 					  colspan:2,
-	   					 					  width:500,
-	   					 					  margin:'0 0 0 5' 
-	   					 				  }]
-	   					    		    }
-	   					    		});
-   					    		   }
-   					    		   //win.down("form").loadRecord(select); 
-   					    		   win.show();
-   					    	   }
    					       }]
     	        	}],
     	        	listeners: {

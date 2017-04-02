@@ -5,7 +5,7 @@
 Ext.define('Admin.view.systemadmin.DeptUpdateForm',{
 	extend:'Admin.view.BaseWindow',
 	title:'部门修改',
-	iconCls:'button-update',
+	iconCls:'x-fa fa-edit',
 	width:300,
 	alias:'widget.deptUpdateForm',
 	height:190,

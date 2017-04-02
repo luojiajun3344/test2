@@ -107,9 +107,9 @@ Ext.define('Admin.view.systemadmin.EmployeInfoManagerPanel',{
   	        		       			frame:false,
   	        		       			border:false,
   	        		       			items:[
-  	        		       			       {text:'添加',tooltip:'添加一个新员工',iconCls:'button-add',itemId:'add',hidden : !Admin.app.checkRight(128, 1)},
-  	        		       			       {text:'修改',tooltip:'修改选中的员工信息',disabled:true,iconCls:'button-update',itemId:'update',hidden : !Admin.app.checkRight(128, 2)},
-  	        		       			       {text:'删除',tooltip:'删除选中员工信息',disabled:true,iconCls:'button-remove',itemId:'del',hidden : !Admin.app.checkRight(128, 3)}
+  	        		       			       {text:'添加',tooltip:'添加一个新员工',iconCls:'x-fa fa-plus',itemId:'add',hidden : !Admin.app.checkRight(128, 1)},
+  	        		       			       {text:'修改',tooltip:'修改选中的员工信息',disabled:true,iconCls:'x-fa fa-edit',itemId:'update',hidden : !Admin.app.checkRight(128, 2)},
+  	        		       			       {text:'删除',tooltip:'删除选中员工信息',disabled:true,iconCls:'x-fa fa-minus',itemId:'del',hidden : !Admin.app.checkRight(128, 3)}
 		       				         ]
 		       			  }]
 		       		}]

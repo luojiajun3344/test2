@@ -14,7 +14,7 @@ Ext.define('Admin.view.baseinfo.Jiaobanche',{
 		            	xtype:'searchForm',
 		            	frame:true,
 		            	region:'north',
-		            	store:gridStore,
+		            	store:theStore,
 		            	defaults : {
 		    				fieldDefaults : {
 		    					labelAlign : 'right',
@@ -92,72 +92,47 @@ Ext.define('Admin.view.baseinfo.Jiaobanche',{
 		            	         }],
 		               dockedItems: [{
 		            	       xtype: 'toolbar',
-		            	       height:30,
 		            	       dock: 'top',
 		            	       items: [
-		            	               {text:'添加',tooltip:'添加一个部门',iconCls:'button-add',itemId:'add',hidden : !Admin.app.checkRight(127, 1)},
-		            	               {text:'修改',tooltip:'修改选中部门',disabled:true,iconCls:'button-update',itemId:'update',hidden : !Admin.app.checkRight(127, 2)},
-		            	               {text:'删除',tooltip:'删除选中部门',disabled:true,iconCls:'button-remove',itemId:'del',hidden : !Admin.app.checkRight(127, 3)},
-		            	               {
-		            	                   xtype: 'tbseparator'
-		            	                },
-		            	               {text:'收起',tooltip:'收起全部部门',
-		            	                iconCls:'button-expanded',
-		            	               handler:function(btn){
-		            	            	   var panel=btn.ownerCt.ownerCt;
-		            	            	   panel.collapseAll();
-		            	               }},
-		            	               {text:'展开',tooltip:'展开全部部门',
-		            	                iconCls:'button-collapsed',
-		            	               handler:function(btn){
-		            	            	   var panel=btn.ownerCt.ownerCt;
-		            	            	   panel.expandAll();
-		            	               }},{
-		            	                   xtype: 'tbseparator'
-		            	                },{
-		            	                   xtype: 'tbspacer',
-		            	                   width:8
-		            	                },{
-		            	                   xtype: 'textfield',
-		            	                   fieldLabel:'部门名称',
-		            	                   name : 'field1',
-		            	                   labelWidth:60,
-		            	                   labelAlign:'rigth',
-		            	                   width:200,
-		            	                   id:'filterByName',
-		            	                   emptyText: '输入部门名称自动搜索',
-		            	                   enableKeyEvents :true,
-		            	                   listeners:{
-		            	                	   change:function( text, e, eOpts ){
-		            	                		   var value=text.getValue();
-		            	                		  // console.log('value='+value);
-		            	                		 //alert(value);
-		            	                		   var treepanels=Ext.ComponentQuery.query('jiaobanche treepanel');
-		            	                		   treepanels[0].expandAll();
-		            	                		   var selected=treepanels[0].getSelectionModel().getSelection();
-		            	                		   if(selected.length>0){
-		            	                			   treepanels[0].getSelectionModel().deselectAll();
-		            	                		   }
-		            	                		  var records=[];
-		            	                		  var nodes=treepanels[0].getRootNode();
-		            	                		  var firstChild=nodes.firstChild;
-		            	                			  firstChild.cascadeBy(function(record){
-		            	                			   	if(record.data.deptName.indexOf(value)!=-1){
-				            	               				records.push(record);
-		            	                			     }
-		            	                			});
-		            	                		 treepanels[0].getSelectionModel().select(records);
-		            	                		   if(value==''){
-		            	                			   treepanels[0].getSelectionModel().deselectAll();
-		            	                		   }
-		            	                		   this.focus();
-		            	                		  }//
-		            	                	   }
-		            	                
-		            	               }
-		            	               
-		            	               ]
-		            	     }]
+		            	               {text:'添加',tooltip:'添加一个部门',iconCls:'x-fa fa-plus',itemId:'add',hidden : !Admin.app.checkRight(127, 1)},
+		            	               {text:'修改',tooltip:'修改选中部门',disabled:true,iconCls:'x-fa fa-edit',itemId:'update',hidden : !Admin.app.checkRight(127, 2)},
+		            	               {text:'删除',tooltip:'删除选中部门',disabled:true,iconCls:'x-fa fa-minus',itemId:'del',hidden : !Admin.app.checkRight(127, 3)}
+		            	              ]
+		            	     },{
+    	            	xtype : 'pagingtoolbar',
+    	            	store : theStore,
+    					dock : 'bottom',
+    					displayMsg : '第{0}条到{1}条,一共{2}条',
+    					emptyMsg : '没有记录',
+    					displayInfo : true,
+    					prevText : "上一页",
+    					nextText : "下一页",
+    					lastText : "最后页",
+    					firstText : "第一页",
+    					beforePageText : "当前页",
+    	        		items:[{
+   					    	   xtype:'tbspacer',
+   					    	   width:20
+   					       },{
+   					    	   xtype:'downloadButton',
+   					    	   tooltip:'导出日志管理报表到Excel表中',
+   					    	   excelConfig:{
+       	    						xtype:'excelConfig',
+       	    						title:'日志管理',
+       	    						columnNames:[
+       	    						             {name:'所属业户',key:'groupId',width:35,align:'left'},
+       	    						             {name:'用户ID', key:'operid', width:20, align:'left'},
+       	    						             {name:'操作时间', key:'opertime', width:20, align:'left'},
+       	    						             {name:'终端SIM卡号', key:'mobile', width:15, align:'left'},
+       	    						             {name:'车牌号', key:'certid', width:15, align:'left'},
+       	    						             {name:'登录IP地址', key:'operip', width:15, align:'left'},
+       	    						             {name:'操作事件', key:'operevent', width:15, align:'left'},
+       	    						             {name:'操作说明', key:'opercont', width:50, align:'left'}
+       	    						            ]  
+   					    	   				  }
+   					    	   		
+   					       }]
+    	        	}]
 
 		            	
 		            }];

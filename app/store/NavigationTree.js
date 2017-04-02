@@ -24,7 +24,7 @@ Ext.define('Admin.store.NavigationTree', {
                 selectable: false,
                    children: [
                     {
-                        text: '搅拌站管理',
+                        text: '搅拌车管理',
                         iconCls: 'x-fa fa-file-o',
                         viewType: 'jiaobanche',
                         leaf: true
@@ -170,18 +170,7 @@ Ext.define('Admin.store.NavigationTree', {
                         leaf: true
                     }
                 ]
-					  }
-				]
-            },
-            {
-                text: '生产任务',
-                iconCls: 'x-fa fa-question',
-                 expanded: false,
-                selectable: false,
-                //routeId: 'pages-parent',
-                //id: 'pages-parent',
-                children: [
-                    {
+					  },{
                         text: ' 生产任务单',
                         iconCls: 'x-fa fa-file-o',
                         viewType: 'pageblank',
@@ -205,7 +194,8 @@ Ext.define('Admin.store.NavigationTree', {
                         viewType: 'lockscreen',
                         leaf: true
                     }
-                ]
+        
+				]
             },{
                 text: '配比管理',
                 iconCls: 'x-fa fa-question',

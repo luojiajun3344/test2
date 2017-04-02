@@ -50,9 +50,9 @@ Ext.define('Admin.view.systemadmin.DeptInfoManagerPanel',{
 		            	       height:30,
 		            	       dock: 'top',
 		            	       items: [
-		            	               {text:'添加',tooltip:'添加一个部门',iconCls:'button-add',itemId:'add',hidden : !Admin.app.checkRight(127, 1)},
-		            	               {text:'修改',tooltip:'修改选中部门',disabled:true,iconCls:'button-update',itemId:'update',hidden : !Admin.app.checkRight(127, 2)},
-		            	               {text:'删除',tooltip:'删除选中部门',disabled:true,iconCls:'button-remove',itemId:'del',hidden : !Admin.app.checkRight(127, 3)},
+		            	               {text:'添加',tooltip:'添加一个部门',iconCls:'x-fa fa-plus',itemId:'add',hidden : !Admin.app.checkRight(127, 1)},
+		            	               {text:'修改',tooltip:'修改选中部门',disabled:true,iconCls:'x-fa fa-edit',itemId:'update',hidden : !Admin.app.checkRight(127, 2)},
+		            	               {text:'删除',tooltip:'删除选中部门',disabled:true,iconCls:'x-fa fa-minus',itemId:'del',hidden : !Admin.app.checkRight(127, 3)},
 		            	               {
 		            	                   xtype: 'tbseparator'
 		            	                },

@@ -25,7 +25,8 @@ Ext.define('Admin.view.SearchForm', {
     theGroupName: null,
     theTimes: null,
     store: null,	//自定义的关联store
-     margin:'5 0 5 0',
+    // margin:'5 0 5 0',
+	 bodyPadding : 5,
     initComponent: function(agruments) {
     	var me = this;  
     	if(this.config){
@@ -34,15 +35,15 @@ Ext.define('Admin.view.SearchForm', {
     	var searchButton = Ext.create('Ext.container.Container', {
 			layout: {
 					type: 'vbox',
-					padding: '5 5 '+this.buttonHeiht/5+' 10',
+					padding: '5 5 10 10',
 					pack: 'center',
 					align: 'center'
 			},
 			items:{
 	            xtype: 'button',
-	            height: me.buttonHeiht,
+	           // height: me.buttonHeiht,
 	            text: me.buttonText,
-	            iconCls : 'button-search',
+	            iconCls : 'x-fa fa-search',
 	            listeners: {
 		            click: function (button) {	
 		            	if(!me.getForm().isValid()){

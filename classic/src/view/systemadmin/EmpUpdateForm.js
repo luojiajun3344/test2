@@ -4,7 +4,7 @@
 Ext.define('Admin.view.systemadmin.EmpUpdateForm',{
 	extend:'Admin.view.BaseWindow',
 	title:'修改员工信息',
-	iconCls:'button-update',
+	iconCls:'x-fa fa-edit',
 	width:300,
 	alias:'widget.empUpdateForm',
 	height:180,

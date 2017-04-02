@@ -4,7 +4,7 @@
 Ext.define('Admin.view.systemadmin.AddDeptInfoForm',{
 	extend:'Admin.view.BaseWindow',
 	title:'添加新部门',
-	iconCls:'button-add',
+	iconCls:'x-fa fa-plus',
 	alias:'widget.addDeptInfoForm',
 	width:300,
 	modal :true,

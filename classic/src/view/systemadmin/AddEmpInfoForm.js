@@ -4,7 +4,7 @@
 Ext.define('Admin.view.systemadmin.AddEmpInfoForm',{
 	extend:'Admin.view.BaseWindow',
 	title:'添加新员工',
-	iconCls:'button-add',
+	iconCls:'x-fa fa-plus',
 	alias:'widget.addEmpInfoForm',
 	width:300,
 	height:180,
