@@ -64,25 +64,25 @@ Ext.define('Admin.store.NavigationTree', {
                     {
                         text: '客户管理',
                         iconCls: 'x-fa fa-file-o',
-                        viewType: 'pageblank',
+                        viewType: 'kehu',
                         leaf: true
                     },
                     {
                         text: '工程管理',
                         iconCls: 'x-fa fa-exclamation-triangle',
-                        viewType: 'page404',
+                        viewType: 'gongcheng',
                         leaf: true
                     },
                     {
                         text: '合同管理',
                         iconCls: 'x-fa fa-times-circle',
-                        viewType: 'page500',
+                        viewType: 'hetong',
                         leaf: true
                     },
                     {
                         text: '运输间距管理',
                         iconCls: 'x-fa fa-lock',
-                        viewType: 'lockscreen',
+                        viewType: 'yunshujuli',
                         leaf: true
                     }
                 ]
@@ -102,96 +102,96 @@ Ext.define('Admin.store.NavigationTree', {
                     {
                         text: '施工部位',
                         iconCls: 'x-fa fa-file-o',
-                        viewType: 'pageblank',
+                        viewType: 'shigongbuwei',
                         leaf: true
                     },
                     {
                         text: '上料员',
                         iconCls: 'x-fa fa-exclamation-triangle',
-                        viewType: 'page404',
+                        viewType: 'shangliaoyuan',
                         leaf: true
                     },
                     {
                         text: '塌落度',
                         iconCls: 'x-fa fa-times-circle',
-                        viewType: 'page500',
+                        viewType: 'taluodu',
                         leaf: true
                     },
                     {
                         text: '浇筑方式',
                         iconCls: 'x-fa fa-lock',
-                        viewType: 'lockscreen',
+                        viewType: 'jiaozhufangshi',
                         leaf: true
                     } ,{
                         text: '水泥品种',
                         iconCls: 'x-fa fa-file-o',
-                        viewType: 'pageblank',
+                        viewType: 'shuinipinzhong',
                         leaf: true
                     },
                     {
                         text: '方量比',
                         iconCls: 'x-fa fa-exclamation-triangle',
-                        viewType: 'page404',
+                        viewType: 'fangliangbi',
                         leaf: true
                     },
                     {
                         text: '外加剂',
                         iconCls: 'x-fa fa-times-circle',
-                        viewType: 'page500',
+                        viewType: 'waijiaji',
                         leaf: true
                     },
                     {
                         text: '抗渗等级',
                         iconCls: 'x-fa fa-lock',
-                        viewType: 'lockscreen',
+                        viewType: 'kangshendengji',
                         leaf: true
                     },{
                         text: '抗冻等级',
                         iconCls: 'x-fa fa-file-o',
-                        viewType: 'pageblank',
+                        viewType: 'kangdongdengji',
                         leaf: true
                     },
                     {
-                        text: '抗折等级',
+                        text: '抗拆等级',
                         iconCls: 'x-fa fa-exclamation-triangle',
-                        viewType: 'page404',
+                        viewType: 'kangchaidengji',
                         leaf: true
                     },
                     {
                         text: '冻融循环',
                         iconCls: 'x-fa fa-times-circle',
-                        viewType: 'page500',
+                        viewType: 'dongrongxunhuan',
                         leaf: true
                     },
                     {
                         text: '集料信息',
                         iconCls: 'x-fa fa-lock',
-                        viewType: 'lockscreen',
+                        viewType: 'jiliaoxinxi',
                         leaf: true
                     }
                 ]
 					  },{
                         text: ' 生产任务单',
                         iconCls: 'x-fa fa-file-o',
-                        viewType: 'pageblank',
+                        viewType: 'shengchanrenwudan',
                         leaf: true
                     },
                     {
                         text: '车辆调度信息',
                         iconCls: 'x-fa fa-exclamation-triangle',
-                        viewType: 'page404',
+                        viewType: 'cheliangdiaodu',
                         leaf: true
                     },
                     {
                         text: '送货单管理',
                         iconCls: 'x-fa fa-times-circle',
-                        viewType: 'page500',
+                        viewType: 'songhuodan',
                         leaf: true
                     },
                     {
                         text: '退砼记录',
                         iconCls: 'x-fa fa-lock',
-                        viewType: 'lockscreen',
+                        viewType: 'tuitongjilu',
                         leaf: true
                     }
         
@@ -207,19 +207,19 @@ Ext.define('Admin.store.NavigationTree', {
                     {
                         text: '理论配比库',
                         iconCls: 'x-fa fa-file-o',
-                        viewType: 'pageblank',
+                        viewType: 'lilunpeibiku',
                         leaf: true
                     },
                     {
                         text: '施工配比库',
                         iconCls: 'x-fa fa-exclamation-triangle',
-                        viewType: 'page404',
+                        viewType: 'shigongpeibiku',
                         leaf: true
                     },
                     {
                         text: '生产任务关联配比',
                         iconCls: 'x-fa fa-times-circle',
-                        viewType: 'page500',
+                        viewType: 'shengchanrenwuguanlian',
                         leaf: true
                     }
                 ]
@@ -234,25 +234,31 @@ Ext.define('Admin.store.NavigationTree', {
                     {
                         text: '生产任务统计',
                         iconCls: 'x-fa fa-file-o',
-                        viewType: 'pageblank',
+                        viewType: 'shengchanrenwu',
                         leaf: true
                     },
                     {
                         text: '生产日统计',
                         iconCls: 'x-fa fa-exclamation-triangle',
-                        viewType: 'page404',
+                        viewType: 'shengchanri',
                         leaf: true
                     },
                     {
                         text: '送货单统计',
                         iconCls: 'x-fa fa-times-circle',
-                        viewType: 'page500',
+                        viewType: 'songhuodantj',
                         leaf: true
                     },
                     {
                         text: '出车运距统计',
                         iconCls: 'x-fa fa-times-circle',
-                        viewType: 'page500',
+                        viewType: 'chucheyunju',
+                        leaf: true
+                    },
+                    {
+                        text: '运输车次统计',
+                        iconCls: 'x-fa fa-times-circle',
+                        viewType: 'yunshucheci',
                         leaf: true
                     }
                 ]
